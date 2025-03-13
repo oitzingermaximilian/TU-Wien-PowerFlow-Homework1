@@ -1,31 +1,18 @@
 name: Ruff
-on: [push, pull_request]
+on: [ push, pull_request ]
 jobs:
   ruff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Set up Python (at least 3.11)
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Install dependencies from your requirements.txt
-
-      - name: Install Ruff
-        run: |
-          pip install ruff  # Install ruff locally
-
-      - name: Check and Fix code style with Ruff
-        run: |
-          ruff check .  # Check code style
-          ruff fix .    # Automatically fix code style issues
-
-      - name: Commit changes (if any) with Git Auto Commit
-        uses: stefanzweifel/git-auto-commit-action
+      - uses: astral-sh/ruff-action@v3
         with:
-          commit_message: 'style fixes by ruff'  # Commit message for auto-fixing changes
+          args: 'format --check'
