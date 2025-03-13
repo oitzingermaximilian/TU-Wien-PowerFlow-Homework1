@@ -26,6 +26,6 @@ jobs:
           ruff fix .    # Automatically fix code style issues
 
       - name: Commit changes (if any) with Git Auto Commit
-        uses: oitzingermaximilian/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action
         with:
           commit_message: 'style fixes by ruff'  # Commit message for auto-fixing changes
