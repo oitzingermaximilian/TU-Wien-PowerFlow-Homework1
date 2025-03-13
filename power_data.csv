@@ -1,4 +1,4 @@
-﻿day,generation,demand
-1,100,150
-2,200,150
-3,50,200
+﻿day,generation,demand,cost_per_kwh
+1,100,150,0.3
+2,200,150,0.4
+3,50,200,0.25
