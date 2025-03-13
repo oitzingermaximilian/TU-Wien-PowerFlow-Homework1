@@ -22,13 +22,6 @@ def deficit_calculation(pv_generation, demand):
         deficit.append(max(0, demand[i] - pv_generation[i]))
     return deficit
 
-def cost_for_deficit(deficit, cost_per_kwh):
-    sum_deficit = sum(deficit)
-    final_cost = sum_deficit * cost_per_kwh
-    for i in range(len(deficit)):
-        cost += deficit[i] * 0.01
-    return cost
-
 def total_cost(deficit, cost_per_kwh):
     daily_costs = []
     for i in range(len(deficit)):
