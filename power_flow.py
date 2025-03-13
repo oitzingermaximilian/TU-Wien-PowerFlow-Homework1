@@ -1,9 +1,5 @@
 import csv
 
-#final ruff test
-
-
-
 def read_data(filename):
     """
     Reads data from a CSV file and extracts relevant columns into separate lists.
