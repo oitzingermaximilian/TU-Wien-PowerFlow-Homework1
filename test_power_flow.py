@@ -10,6 +10,7 @@ from power_flow import (
 # Test data
 TEST_CSV = "test_power_data.csv"
 
+
 # Fixture to create a temporary CSV file for testing
 @pytest.fixture
 def create_test_csv():
@@ -19,12 +20,15 @@ def create_test_csv():
         {"day": "3", "generation": "50", "demand": "200", "cost_per_kwh": "0.25"},
     ]
     with open(TEST_CSV, mode="w", newline="", encoding="utf-8-sig") as file:
-        writer = csv.DictWriter(file, fieldnames=["day", "generation", "demand", "cost_per_kwh"])
+        writer = csv.DictWriter(
+            file, fieldnames=["day", "generation", "demand", "cost_per_kwh"]
+        )
         writer.writeheader()
         writer.writerows(test_data)
     yield TEST_CSV
     # Clean up the test file after the test
     import os
+
     os.remove(TEST_CSV)
 
 
@@ -43,6 +47,7 @@ def test_deficit_calculation():
     demand = [150, 150, 200]
     deficit = deficit_calculation(pv_generation, demand)
     assert deficit == [50, 0, 150]
+
 
 # Test total_cost function
 def test_total_cost():
