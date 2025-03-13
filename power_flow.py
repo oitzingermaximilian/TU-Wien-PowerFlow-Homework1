@@ -26,7 +26,7 @@ def read_data(filename):
     pv_generation = []
     demand = []
     cost_per_kwh = []
-    with open(filename, "r", encoding="utf-8-sig") as csvfile:
+    with open(filename, 'r', encoding="utf-8-sig") as csvfile:
         reader = csv.DictReader(csvfile)
         print("Column headers:", reader.fieldnames)
         for row in reader:
@@ -82,7 +82,7 @@ def total_cost(deficit, cost_per_kwh):
     """
     daily_costs = []
     for i in range(len(deficit)):
-        day = i + 1
+        day = i+1
         daily_deficit = deficit[i]
         daily_cost = daily_deficit * cost_per_kwh[i]
         daily_costs.append(
