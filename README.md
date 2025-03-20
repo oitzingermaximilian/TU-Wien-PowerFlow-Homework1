@@ -10,3 +10,6 @@ The power_flow.py script contains four functions:
  - def deficit_calculation() calculates the energy deficit based on the difference between the electrical demand and the photovoltaic generation at each time step.
  - def total_cost() calculates total daily costs for a given deficit and cost per kilowatt-hour (kWh).
  - def power_flow() calculates the daily costs based on power flow data from a given file. The function reads photovoltaic generation, energy demand, and cost of energy per kilowatt-hour from the file, determines the energy deficit, and then computes the daily costs based on that deficit.
+
+
+This Project further contains an .gitignore file provided by github with recommended content to ignore. This Repository does CI in the form of a Ruff file and Pytest file wich does unit testing to see if the equations defined in power_flow.py return expected values.
