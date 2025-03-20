@@ -27,8 +27,8 @@ def read_data(filename):
 def deficit_calculation(pv_generation, demand):
     """
     Calculates the energy deficit for each day/timestep given in the days list.
-    Equation: Demand - PV_generation 
-    If generation meets demand: Deficit == 0 
+    Equation: Demand - PV_generation
+    If generation meets demand: Deficit == 0
     Return: deficit = type list []
     """
     deficit = []
@@ -62,8 +62,8 @@ def total_cost(deficit, cost_per_kwh):
 def power_flow(filename):
     """
     Uses all prior functions to return the results
-    Argument: location/name of the file as string "example.csv" 
-    It returns the daily energy costs 
+    Argument: location/name of the file as string "example.csv"
+    It returns the daily energy costs
     """
     days, pv_generation, demand, cost_per_kwh = read_data(filename)
     deficit = deficit_calculation(pv_generation, demand)
