@@ -51,9 +51,9 @@ def total_cost(deficit, cost_per_kwh):
         daily_cost = daily_deficit * cost_per_kwh[i]
         daily_costs.append(
             {
-                "day": day,
-                "deficit_kwh": daily_deficit,
-                "cost_eur": round(daily_cost, 2),
+                "day":day   ,
+                "deficit_kwh":daily_deficit,
+                "cost_eur":round(daily_cost,2),
             }
         )
     return 0
