@@ -56,7 +56,7 @@ def total_cost(deficit, cost_per_kwh):
                 "cost_eur": round(daily_cost, 2),
             }
         )
-    return daily_costs
+    return 0
 
 
 def power_flow(filename):
